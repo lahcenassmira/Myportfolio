@@ -13,18 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>LAHCEN ASSMIRA</title>
+        <link rel="icon" type="image/x-icon" href="/images/iconPic.png">
+    <title >LAHCEN ASSMIRA</title>
 </head>
 
 <body >
+    <div id="loader" class="loader">
+        <img src="images/LOGO.png" alt="">
+    </div>
+    <div id="content" class="hidden">
     <header id="g-container"  >
-<img id="logo" src="./images/LOGO.png" >
+      
+            <img id="logo" src="./images/LOGO.png" >
+        
+        
         <nav class="container" id="header">
             <ul >
                 
              
-                <li><a href="#about">About</a></li>
+                <li><a href="#aboutDown">About</a></li>
                 <li><a href="#services"> Services</a></li>
                 <li><a href="#portfolio">Blog</a></li>
                 <li><a href="#contact" class="active">  Contact</a></li>
@@ -63,14 +70,32 @@
             <a href=""><i class="fa fab fab fab fa-instagram"></i></a>
           </div>
        </div>
-       <button id="scrollBtn">Scroll</button>
+      
+        
+            <div class="scroll"  >
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                
+            </div>
+       
+       
     </section>
-      <div class="about">
+    
+      <div class="about" id="aboutDown">
+        
         <div class="container">
-            <h1 class="hero__title">ABOUT ME</h1>
+            <h1 class="hero__title">&gt;_ABOUT ME</h1>
+            <div class="content">
+                <img src="images/iconPic.png" alt="">
+                <article>
+                    
+                </article>
+            </div>
+           
         </div>
       </div>
-
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>

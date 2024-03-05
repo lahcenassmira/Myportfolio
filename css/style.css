@@ -7,7 +7,7 @@
 }
 
 html {
-    /* smooth */
+
     -webkit-scroll-behavior: smooth;
     -moz-scroll-behavior: smooth;
     scroll-behavior: smooth;
@@ -15,6 +15,31 @@ html {
 
 
 
+}
+.loader img {
+    animation: spin 1s linear infinite;
+    border: 4px solid var(--four-color);
+    background-color: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 46%;
+   
+
+  
+}
+
+
+
+@keyframes spin {
+    0% { transform:  scale(0); }
+    10% { transform:  scale(1); }
+    100% { transform:  scale(2); }
+}
+
+/* Hide content initially */
+.hidden {
+    display: none;
 }
 
 
@@ -86,7 +111,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    height: 90px;
+    height: 80px;
     position: fixed;
     z-index: 2;
 }
@@ -237,6 +262,9 @@ header .container ul a.active {
 }
 
 
+section {
+    min-height: 100vh;
+}
 
 section .text {
 
@@ -281,6 +309,7 @@ section .left {
     position: fixed;
     top: 40%;
     left: 4%;
+  
 
 
 }
@@ -290,6 +319,7 @@ section .left .socialM {
     margin-top: 60px;
     font-size: 35px;
     position: relative;
+    
 
 
 }
@@ -316,11 +346,11 @@ section .left .socialM a {
     text-align: center;
     flex-direction: column;
     margin-top: 10px;
-    /* background-color: black; */
+    background-color: var(--secondary-color);
     color: var(--four-color);
     padding: 5px;
     border-radius: 50%;
-    /* outline: 2px solid; */
+    outline: 2px solid;
 
     transition: .3s;
 }
@@ -368,7 +398,7 @@ section .container img {
     z-index: 4444;
 
     transition: transform 0.3s ease;
-    /* Add transition effect */
+   
 }
 
 section .container img:hover {
@@ -389,17 +419,83 @@ section .left .socialM a i:hover {
 }
 
 
-#scrollBtn {
-    position: fixed;
-    bottom: 20px;
-    left: 45%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+section .scroll {
+    position: absolute;
+
+    left: 50%;
+
     cursor: pointer;
+}
+
+@media (max-width:768px) {
+    section .scroll {
+        bottom: 70px;
+
+        /* transform: rotate(180deg) translateY(-50px); */
+    }
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 51%;
+    background: var(--main-color);
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
 }
 
 #g-container {
@@ -423,7 +519,7 @@ section .left .socialM a i:hover {
 
 /* --- Custom Properties -- */
 :root {
-    --steps: 19;
+    --steps: 20;
     --typing-duration: 4s;
     --caret-blink-duration: 0.5s;
 }
@@ -471,37 +567,39 @@ section .left .socialM a i:hover {
     padding-top: 130px;
     height: 100vh;
     position: relative;
-   
+
 }
 
 .about .hero__title {
     border-right: none;
-   
+
     animation: typing 2.5s steps(var(--steps)) infinite,
         caret var(--caret-blink-duration) steps(1) infinite;
 }
-.about h1{
+
+.about h1 {
     position: relative;
     padding: 10px;
-   text-transform: capitalize;
+    text-transform: capitalize;
     color: var(--three-color);
 }
 
-.about::after  {
+.about::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 3px;
-    left: 26%;
-  top: 23%;
-  background-color: var(--four-color);
+    left: 28%;
+    top: 23%;
+    background-color: var(--four-color);
 }
-.about::before{
+
+.about::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 3px;
-    left: 14%;
-  background-color: var(--four-color);
+    width: 3px;
+    height: 590px;
+    top: 24%;
+    left: 13%;
+    background-color: var(--four-color);
 }
-  
