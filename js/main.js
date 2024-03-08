@@ -1,15 +1,17 @@
 
-
-
-const openM = document.querySelector("#mobile");
-const closeM = document.querySelector("#close");
 const showContainer = document.querySelector(".container");
 const logoR = document.querySelector("#logo");
-
 const scrollButton = document.querySelector('.scroll');
+const itemList = document.querySelectorAll(".item-list ul li");
+// console.log(itemList)
+const mainList = document.querySelector(".main");
+
+// itemList.addEventListener("click" , () => {
+//       mainList.style.display = "none";
+// })
 logoR.addEventListener("click", () => location.href = "index.html");
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) { // Adjust 100 to the desired scroll position
+  if (window.scrollY > 100) { 
     scrollButton.style.display = 'none';
 
 
@@ -22,17 +24,6 @@ window.addEventListener('scroll', () => {
 logoR.addEventListener("click", () => location.href = "index.html");
 
 
-openM.addEventListener("click", () => {
-  showContainer.style.display = "block";
-  openM.style.display = "none";
-  closeM.style.display = "block";
-
-});
-closeM.addEventListener("click", () => {
-  showContainer.style.display = "none";
-  openM.style.display = "block";
-  closeM.style.display = "none";
-});
 
 
 
@@ -42,21 +33,13 @@ window.addEventListener('scroll', function () {
 
   var header = document.querySelector('header');
   header.style.backdropFilter = 'blur(' + (window.scrollY / 50) + 'px)';
-  header.style.boxShadow = "0 3px 4px #061423";
+  header.style.boxShadow = "0 2px 8px #A19FD5";
   if (window.scrollY < 110) {
     header.style.boxShadow = "none";
+
   }
 
 });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -145,15 +128,8 @@ const lahcenLogo = anime({
   delay: 200, // Delay before animation starts in milliseconds
   loop: false// Animation does not loop
 });
-const lahcenMobile = anime({
-  targets: '#mobile',
-  translateX: [-90, 0],
-  opacity: [0, 1],
-  easing: 'easeInOutQuad', // Easing function
-  duration: 3500, // Duration of animation in milliseconds
-  delay: 200, // Delay before animation starts in milliseconds
-  loop: false// Animation does not loop
-});
+
+
 
 
 
@@ -176,19 +152,51 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     hideLoader();
     showContent();
-    
-  }, 2000); // Replace with your actual data loading logic and time
+    const darkmode = new Darkmode(options);
+darkmode.showWidget();
+
+  }, 2200); // Replace with your actual data loading logic and time
 
   function hideLoader() {
     const loader = document.getElementById("loader");
-  
+
     loader.style.display = "none";
-  
+
   }
 
   function showContent() {
     const content = document.getElementById("content");
     content.style.display = "block";
-  
+
   }
 });
+
+//scroll Up
+const scrollBtn = document.getElementById("scroll-up");
+const scrollUp = () => {
+  this.scrollY >= 350 ? scrollBtn.classList.add("show-scroll") : scrollBtn.classList.remove("show-scroll");
+
+}
+window.addEventListener('scroll', scrollUp);
+// Scroll to top when button is clicked
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+//toggle
+const options = {
+  bottom: '695px', // default: '32px'
+  right: '100px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '.8s', // default: '0.3s'
+  mixColor: 'white', // default: '#fff'
+  backgroundColor: '#061423',  
+  buttonColorDark: 'white',  
+  buttonColorLight: '#061423', 
+  saveInCookies: false, 
+  label: '🌓', 
+  autoMatchOsTheme: true 
+}
