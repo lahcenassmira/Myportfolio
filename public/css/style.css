@@ -11,15 +11,15 @@
 :root {
     --main-color: #070F2B;
     --secondary-color: #1B1A55;
-    --three-color:  #A19FD5;
-    --four-color:#A19FD5;
+    --three-color: #A19FD5;
+    --four-color: #A19FD5;
 
 
 }
 
 .main {
     position: absolute;
-    right: 30px;
+    
     left: unset;
     display: none;
     z-index: 3;
@@ -95,8 +95,8 @@
 
     .item-list {
         position: absolute;
-        right: -100px;
-        top: 77px;
+       left: 75px;
+        top: 66px;
         transform: translateX(-50%) scale(0);
         transform-origin: center;
         transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
@@ -171,17 +171,19 @@ html {
     -webkit-scroll-behavior: smooth;
     -moz-scroll-behavior: smooth;
     scroll-behavior: smooth;
-
-
-
-
 }
 
+/* Dark Theme */
+
+
 .loader {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100px;
+  
+    
 }
 
 .loader img {
@@ -189,7 +191,13 @@ html {
     border: 4px solid var(--four-color);
     background-color: var(--main-color);
     border-radius: 50%;
+    padding: 20px;
 
+}
+.loader  .txtL{
+    color: var(--four-color);
+    margin-top: 20px;
+    padding: 20px;
 }
 
 @keyframes spin {}
@@ -198,7 +206,8 @@ html {
     position: fixed;
     right: 2rem;
     bottom: -50%;
-    background-color: white;
+    background-color: #2EFA00;
+    box-shadow: 0px 2px 7px rgb(8, 8, 8);
     display: inline-flex;
     padding: 8px;
     z-index: 999;
@@ -283,32 +292,33 @@ body {
 
 }
 
-.darkmode-toggle{
+.darkmode-toggle {
     font-size: 25px;
     padding-bottom: 3px;
     padding-right: 3px;
 }
+
 @media (min-width:768px) {
-   
-
-.darkmode-toggle {
-    z-index: 6;
-    
-   
 
 
+    .darkmode-toggle {
+        z-index: 6;
+        
+
+    }
 }
-}
+
 @media (max-width:768px) {
-   
-
-.darkmode-toggle {
-    position: absolute;
-    top: 4%;
-    z-index: 5;
 
 
-}
+    .darkmode-toggle {
+        position: absolute;
+        top: 2.5%;
+       
+        z-index: 5;
+
+
+    }
 }
 
 header {
@@ -317,19 +327,16 @@ header {
     height: 80px;
     position: fixed;
     z-index: 2;
-     background: #061423;
+    background: #06142375;
 }
-header #logo{
-    position: absolute;
-    left: 2%;
-}
+
 header .container {
     z-index: 2;
-    border-radius: 10px; 
-   
-      
+    border-radius: 10px;
+    position: relative;
+
     /* filter: drop-shadow(5px 6px 7px rgb(3, 3, 3)); */
-    padding: 20px ;
+    padding: 20px;
     animation: glow 1s alternate;
 
     font-family: "Bai Jamjuree", sans-serif;
@@ -340,7 +347,12 @@ header .container {
 
 }
 
-
+@media (min-width:768px) {
+    header #logo {
+        position: absolute;
+        left: 15%;
+    }
+}
 
 
 @media (max-width:768px) {
@@ -352,13 +364,11 @@ header .container {
 
     }
 
-   
-
-
-    header .container ul a {
-        font-size: 1.5rem !important;
+    header #logo {
+        position: absolute;
+        left: 30%;
+     
     }
-
 
 }
 
@@ -385,15 +395,16 @@ header img {
 
 header .container ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 
 }
 
 header .container ul a {
     cursor: pointer;
+    margin-left: 20px;
     color: var(--four-color);
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 1.3rem;
     padding: 7px;
     transition: .3s;
 }
@@ -532,23 +543,30 @@ section .left .socialM a {
     section .left {
         position: absolute;
         z-index: 0;
+        margin-top: 70px;
 
     }
 
     section .left .socialM {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: absolute;
-        bottom: -300px;
-        left: 40px;
-
+        font-size: 20px;
     }
 
-    section .left .socialM a {
-        margin-left: 10px;
+
+    section .container .text{
+        margin-left: -65px;
+        text-align: center;
+        flex: 1;
+    }
+    section .container .text h1{
+        font-size: 20px;
 
     }
+    section .container .text span{
+        font-size: 18px;
+
+    }
+   
+  
 
     section .left .socialM::after {
         display: none;
@@ -561,27 +579,57 @@ section .left .socialM a {
 }
 
 
-section .container img {
+
+section .container .relative {
+    position: relative;
+}
+
+section .container .relative img:nth-child(1) {
     width: 100%;
     max-width: 400px;
     height: auto;
     border: 1px solid #63d308;
-    background-image: url(../images/reactjs.png);
+    background: url(../images/matrix-background.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 50%;
     z-index: 4444;
     transition: transform 0.3s ease;
     box-shadow: 3px 0px 6px #63d308;
-
 }
 
-section .container img:hover {
+section .container img:hover:nth-child(1) {
     transform: scale(1.05);
     box-shadow: 3px 4px 6px #63d308;
+}
 
+section .container .relative img:nth-child(2) {
+    width: 100%;
+    max-width: 90px;
+    position: absolute;
+    right: -1%;
+    top: -4%;
+}
+
+section .container .relative img:nth-child(3) {
+    width: 100%;
+    max-width: 90px;
+    position: absolute;
+    left: 9%;
+    bottom: -12%;
+}
+
+section .container .relative img:nth-child(4) {
+    width: 100%;
+    max-width: 90px;
+    position: absolute;
+    left: -1%;
+    top: -5%;
 }
 
 section .left .socialM a:hover {
-    
+
 
     transform: translateY(-4px);
     box-shadow: 3px 4px 6px black;
@@ -602,6 +650,21 @@ section .scroll {
     section .scroll {
         bottom: 70px;
     }
+
+    section .container {
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+
+    section .container .relative {
+        margin-top: -54px;
+        max-width: 250px;
+
+    }
+    section .container .relative img:not(:nth-child(1)){
+      max-width: 60px;
+    }
+
 }
 
 .chevron {
@@ -631,7 +694,7 @@ section .scroll {
     top: 0px;
     height: 100%;
     width: 51%;
-    background: var(--main-color);
+    background: black;
 }
 
 .chevron:before {
@@ -669,15 +732,15 @@ section .scroll {
 
 #g-container {
     width: 100vw;
-    padding: 50px;
-    box-sizing: border-box;
+    padding: 10px;
+
 
 }
 
 #g-container::before {
     content: "";
     position: fixed;
-    height: 6px;
+    height: 4px;
     left: 0;
     top: 0;
     right: 0;
@@ -725,11 +788,13 @@ section .scroll {
 @keyframes scale {
     0% {
         transform: scaleX(0);
+
     }
 
     90%,
     100% {
         transform: scaleX(1);
+
     }
 
 }

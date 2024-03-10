@@ -117,7 +117,9 @@ const lahcenSocial = anime({
   easing: 'easeInOutQuad',
   duration: 3500, // Duration of animation in milliseconds
   delay: 400, // Delay before animation starts in milliseconds
-  loop: false // Animation does not loop
+  loop: false 
+  
+  // Animation does not loop
 });
 const lahcenLogo = anime({
   targets: '#logo',
@@ -128,6 +130,18 @@ const lahcenLogo = anime({
   delay: 200, // Delay before animation starts in milliseconds
   loop: false// Animation does not loop
 });
+const lahcenSkill = anime({
+  targets: '.relative img:not(:nth-child(1))',
+  translateY: [-10, 0],
+  opacity: [ 1],
+  direction: 'alternate',
+ easing: 'linear',
+
+  duration: 2000, // Duration of animation in milliseconds
+  delay: 200, // Delay before animation starts in milliseconds
+  loop: true// Animation does not loop
+});
+
 
 
 
@@ -188,8 +202,8 @@ scrollBtn.addEventListener("click", function () {
 
 //toggle
 const options = {
-  bottom: '695px', // default: '32px'
-  right: '100px', // default: '32px'
+  bottom: '710px', // default: '32px'
+  right: '1%', // default: '32px'
   left: 'unset', // default: 'unset'
   time: '.8s', // default: '0.3s'
   mixColor: 'white', // default: '#fff'
@@ -200,3 +214,7 @@ const options = {
   label: '🌓', 
   autoMatchOsTheme: true 
 }
+
+
+
+//scroll
