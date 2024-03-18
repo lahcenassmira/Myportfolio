@@ -2,13 +2,7 @@
 const showContainer = document.querySelector(".container");
 const logoR = document.querySelector("#logo");
 const scrollButton = document.querySelector('.scroll');
-const itemList = document.querySelectorAll(".item-list ul li");
-// console.log(itemList)
-const mainList = document.querySelector(".main");
 
-// itemList.addEventListener("click" , () => {
-//       mainList.style.display = "none";
-// })
 logoR.addEventListener("click", () => location.href = "index.html");
 window.addEventListener('scroll', () => {
   if (window.scrollY > 100) { 
@@ -27,19 +21,6 @@ logoR.addEventListener("click", () => location.href = "index.html");
 
 
 
-//scroll blur
-// Listen to the scroll event
-window.addEventListener('scroll', function () {
-
-  var header = document.querySelector('header');
-  header.style.backdropFilter = 'blur(' + (window.scrollY / 50) + 'px)';
-  header.style.boxShadow = "0 2px 8px #A19FD5";
-  if (window.scrollY < 110) {
-    header.style.boxShadow = "none";
-
-  }
-
-});
 
 
 
@@ -86,10 +67,10 @@ const headerAnimation = anime({
   targets: '#header',
   translateY: [-50, 0],
   opacity: [0, 1],
-  easing: 'easeInOutQuad', // Easing function
-  duration: 3500, // Duration of animation in milliseconds
-  delay: 200, // Delay before animation starts in milliseconds
-  loop: false // Animation does not loop
+  easing: 'easeInOutQuad', 
+  duration: 3500,
+  delay: 200, 
+  loop: false 
 
 });
 const lahcenImg = anime({
@@ -97,26 +78,26 @@ const lahcenImg = anime({
   opacity: [0, 1],
   translateX: ['30%', '0%'],
   easing: 'easeInOutQuad',
-  duration: 3500, // Duration of animation in milliseconds
-  delay: 400, // Delay before animation starts in milliseconds
-  loop: false // Animation does not loop
+  duration: 3500, 
+  delay: 400,
+  loop: false 
 });
 const lahcenTxt = anime({
   targets: '#left-text',
   opacity: [0, 1],
   translateX: ['0%', '10%'],
   easing: 'easeInOutQuad',
-  duration: 3500, // Duration of animation in milliseconds
-  delay: 400, // Delay before animation starts in milliseconds
-  loop: false // Animation does not loop
+  duration: 3500, 
+  delay: 400,
+  loop: false 
 });
 const lahcenSocial = anime({
   targets: '#leftSocial',
   opacity: [0, 1],
   translateY: ['30%', '0%'],
   easing: 'easeInOutQuad',
-  duration: 3500, // Duration of animation in milliseconds
-  delay: 400, // Delay before animation starts in milliseconds
+  duration: 3500, 
+  delay: 400,
   loop: false 
   
   // Animation does not loop
@@ -202,10 +183,9 @@ scrollBtn.addEventListener("click", function () {
 
 //toggle
 const options = {
-  bottom: '710px', // default: '32px'
-  right: '1%', // default: '32px'
-  left: 'unset', // default: 'unset'
-  time: '.8s', // default: '0.3s'
+  bottom: '100%', // default: '32px'
+
+  time: '.3s', // default: '0.3s'
   mixColor: 'white', // default: '#fff'
   backgroundColor: '#061423',  
   buttonColorDark: 'white',  

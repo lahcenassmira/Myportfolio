@@ -20,3 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  //scroll blur
+// Listen to the scroll event
+window.addEventListener('scroll', function () {
+
+  var header = document.querySelector('header');
+  header.style.backdropFilter = 'blur(' + (window.scrollY / 50) + 'px)';
+  header.style.boxShadow = "0 2px 8px #A19FD5";
+  if (window.scrollY < 110) {
+    header.style.boxShadow = "none";
+
+  }
+
+});
