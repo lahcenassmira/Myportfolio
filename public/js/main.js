@@ -5,7 +5,7 @@ const scrollButton = document.querySelector('.scroll');
 
 logoR.addEventListener("click", () => location.href = "index.html");
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) { 
+  if (window.scrollY > 100) {
     scrollButton.style.display = 'none';
 
 
@@ -67,10 +67,10 @@ const headerAnimation = anime({
   targets: '#header',
   translateY: [-50, 0],
   opacity: [0, 1],
-  easing: 'easeInOutQuad', 
+  easing: 'easeInOutQuad',
   duration: 3500,
-  delay: 200, 
-  loop: false 
+  delay: 200,
+  loop: false
 
 });
 const lahcenImg = anime({
@@ -78,29 +78,28 @@ const lahcenImg = anime({
   opacity: [0, 1],
   translateX: ['30%', '0%'],
   easing: 'easeInOutQuad',
-  duration: 3500, 
+  duration: 3500,
   delay: 400,
-  loop: false 
+  loop: false
 });
 const lahcenTxt = anime({
   targets: '#left-text',
   opacity: [0, 1],
   translateX: ['0%', '10%'],
   easing: 'easeInOutQuad',
-  duration: 3500, 
+  duration: 3500,
   delay: 400,
-  loop: false 
+  loop: false
 });
 const lahcenSocial = anime({
   targets: '#leftSocial',
   opacity: [0, 1],
   translateY: ['30%', '0%'],
   easing: 'easeInOutQuad',
-  duration: 3500, 
+  duration: 3500,
   delay: 400,
-  loop: false 
-  
-  // Animation does not loop
+  loop: false
+
 });
 const lahcenLogo = anime({
   targets: '#logo',
@@ -114,19 +113,14 @@ const lahcenLogo = anime({
 const lahcenSkill = anime({
   targets: '.relative img:not(:nth-child(1))',
   translateY: [-10, 0],
-  opacity: [ 1],
+  opacity: [1],
   direction: 'alternate',
- easing: 'linear',
+  easing: 'linear',
 
   duration: 2000, // Duration of animation in milliseconds
   delay: 200, // Delay before animation starts in milliseconds
   loop: true// Animation does not loop
 });
-
-
-
-
-
 
 
 // Trigger animation when the page loads
@@ -148,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hideLoader();
     showContent();
     const darkmode = new Darkmode(options);
-darkmode.showWidget();
+    darkmode.showWidget();
 
   }, 2200); // Replace with your actual data loading logic and time
 
@@ -187,14 +181,31 @@ const options = {
 
   time: '.3s', // default: '0.3s'
   mixColor: 'white', // default: '#fff'
-  backgroundColor: '#061423',  
-  buttonColorDark: 'white',  
-  buttonColorLight: '#061423', 
-  saveInCookies: false, 
-  label: '🌓', 
-  autoMatchOsTheme: true 
+  backgroundColor: '#061423',
+  buttonColorDark: 'white',
+  buttonColorLight: '#061423',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: true
 }
 
 
 
-//scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("showSection");
+    } else {
+      entry.target.classList.remove("showSection");
+    }
+  });
+
+});
+
+const elementabout = document.querySelectorAll(".hiddenSection");
+
+
+elementabout.forEach((el) => observer.observe(el));
+
+
+

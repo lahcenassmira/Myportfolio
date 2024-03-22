@@ -814,6 +814,51 @@ section .scroll {
 
 }
 
+@media (max-width:768px) {
+    .about .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+
+    }
+
+    .about::before {
+        display: none;
+    }
+
+    .about::after {
+        display: none;
+    }
+
+    .about .container #about-txt p {
+
+        font-size: 18px !important;
+        margin-left: 15px;
+        margin-bottom: 28px;
+
+    }
+
+    .about h1 {
+        margin-left: 20px !important;
+
+    }
+
+    .about .image img {
+        margin-left: 9px !important;
+        margin-bottom: -28px;
+    }
+
+    .about .download-link {
+
+        left: 28% !important;
+        margin-bottom: 28px;
+        margin-top: 50px;
+
+    }
+    
+}
+
 .about .hero__title {
     border-right: none;
     margin-left: 200px;
@@ -848,46 +893,76 @@ section .scroll {
     background-color: var(--four-color);
 }
 
+
 .about .content {
     display: flex;
-
     gap: 30px;
     padding-top: 50px;
 
 }
 
-.about .container img {
+.about .image img {
 
-    padding: 20px;
-    width: 460%;
-    height: 400px;
+    height: auto;
 
-    border-radius: 35px;
+    max-width: 400px;
+    border-radius: 36px;
+    padding: 5px;
+    margin-left: 20px;
+    transition: .3s linear;
+
 }
+
 
 .about .container #about-txt p {
     color: var(--four-color);
     font-size: 24px;
     padding-top: 20px;
-    margin-left: 250px;
+
     letter-spacing: 1.6px;
     font-family: 'Roboto';
 }
 
 .about .download-link {
-    background-color: var(--secondary-color);
+    background-color: rgb(41, 201, 41);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    position: absolute;
-    bottom: 19%;
-    left: 50%;
+    position: relative;
+
+    left: 40%;
     font-size: 20px;
-    font-family:'Roboto' sans-serif;
+    font-family: 'Roboto' sans-serif;
 }
 
-.download-link:hover {
-    background-color: #092d53;
+.about .download-link:hover {
+    background-color: green;
+}
+
+audio {
+    position: relative;
+    left: 480px;
+    top: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.about .top {
+    margin-top: -63px;
+}
+
+
+.hiddenSection {
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-60%);
+    transition: all 1s;
+}
+
+.showSection {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }
