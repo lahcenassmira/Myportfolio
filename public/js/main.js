@@ -17,12 +17,16 @@ window.addEventListener('scroll', () => {
 
 logoR.addEventListener("click", () => location.href = "index.html");
 
+// mobile nav
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
 
-
-
-
-
-
+function closeMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.remove('active');
+}
 
 // animation 
 
@@ -178,7 +182,6 @@ scrollBtn.addEventListener("click", function () {
 //toggle
 const options = {
   bottom: '100%', // default: '32px'
-
   time: '.3s', // default: '0.3s'
   mixColor: 'white', // default: '#fff'
   backgroundColor: '#061423',
@@ -188,24 +191,52 @@ const options = {
   label: '🌓',
   autoMatchOsTheme: true
 }
+// function filter text with color
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectBoxes = document.querySelectorAll('.project-box');
+const searchInput = document.getElementById('searchInput');
 
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filterValue = button.getAttribute('data-filter');
 
+        projectBoxes.forEach(box => {
+            const category = box.getAttribute('data-category');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("showSection");
-    } else {
-      entry.target.classList.remove("showSection");
-    }
-  });
-
+            if (filterValue === 'all' || filterValue === category) {
+                box.style.display = 'block';
+            } else {
+                box.style.display = 'none';
+            }
+        });
+    });
 });
 
-const elementabout = document.querySelectorAll(".hiddenSection");
+searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase();
 
+    projectBoxes.forEach(box => {
+        const title = box.querySelector('.project-title');
+        const description = box.querySelector('.project-description');
 
-elementabout.forEach((el) => observer.observe(el));
+        const titleText = title.textContent.toLowerCase();
+        const descriptionText = description.textContent.toLowerCase();
 
+        if (titleText.includes(searchValue) || descriptionText.includes(searchValue)) {
+            title.innerHTML = highlightMatch(titleText, searchValue);
+            description.innerHTML = highlightMatch(descriptionText, searchValue);
+            box.style.display = 'block';
+        } else {
+            title.innerHTML = titleText;
+            description.innerHTML = descriptionText;
+            box.style.display = 'none';
+        }
+    });
+});
+
+function highlightMatch(text, searchValue) {
+    return text.replace(new RegExp(searchValue, 'gi'), match => `<span class="highlight">${match}</span>`);
+}
+AOS.init();
 
 

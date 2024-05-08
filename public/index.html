@@ -12,9 +12,12 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="icon" type="image/x-icon" href="/images/iconPic.png">
     <title>
         < LAHCEN />
@@ -32,60 +35,37 @@
     </div>
     <div id="content" class="hidden">
         <header id="g-container">
-            <div class="main">
-                <label class="menu-button-wrapper" for="">
-                    <input type="checkbox" class="menu-button">
-                    <div class="icon-wrapper">
-                        <label class="hamburger">
-                            <input class="hamburger-input" type="checkbox">
-                            <span class="hamburger-line first"></span>
-                            <span class="hamburger-line second"></span>
-                            <span class="hamburger-line third"></span>
-                        </label>
-                    </div>
-                    <div class="item-list">
-
-                        <ul>
-
-
-                            <ul>
-                                <li><a href="#about1" id="about-link">About</a></li>
-                                <li><a href="#skill1" id="skill-link">Skills</a></li>
-                                <li><a href="#project1" id="project-link">Projects</a></li>
-                                <li><a href="#contact1" class="active" id="contact-link"> Contact</a></li>
-                            </ul>
-                        </ul>
-
-
-                    </div>
-                </label>
-
-
-            </div>
-
-
-
+            <nav class="navbar">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="line-menu"></div>
+                    <div class="line-menu"></div>
+                    <div class="line-menu"></div>
+                </div>
+                <ul class="menu">
+                    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#skills" onclick="closeMenu()">skills</a></li>
+                    <li><a href="#project" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
             <img id="logo" src="images/LOGO.png">
             <nav class="container" id="header">
-
                 <ul>
-                    <li><a href="#about1" id="about-link">About</a></li>
-                    <li><a href="#skill1" id="skill-link">Skills</a></li>
-                    <li><a href="#project1" id="project-link">Projects</a></li>
-                    <li><a href="#contact1" class="active" id="contact-link"> Contact</a></li>
+                    <li><a href="#about" id="about-link">About</a></li>
+                    <li><a href="#skills" id="skill-link">Skills</a></li>
+                    <li><a href="#project" id="project-link">Projects</a></li>
+                    <li><a href="#contact" class="active" id="contact-link"> Contact</a></li>
                 </ul>
-
             </nav>
-
-
-
         </header>
-        <section class="hero " id="home">
+        <section class="hero" id="home">
             <div class="container">
                 <div class="text" id="left-text">
                     <h1>hello! </h1>
                     <span> I'm <span>&lt; lahcen assmira /&gt;</span></span>
-                    <p class="hero__title">&gt;_FrontEnd Developer</p>
+
+                    <p class="hero__title">&gt;_Web Developer</p>
 
                 </div>
                 <div id="image" class="relative">
@@ -121,15 +101,14 @@
 
         </section>
 
-        <div class="about  hiddenSection  " id="about1">
-            <h1 class="hero__title  hiddenSection">&gt;_ABOUT ME</h1>
-            <div class="container hiddenSection   ">
-                <div class="content ">
+        <div class="about  " id="about">
+            <h1 class="hero__title line ">&gt;_ABOUT ME</h1>
+            <div class="container  ">
+                <div class="about-content">
                     <div class="image ">
                         <img src="images/about.jpg" alt="image portfolio">
                     </div>
-
-                    <article id="about-txt">
+                    <article id="about-text">
                         <p id="parag">
                             I am Lahcen Assmira, a freelance Front-End developer with more than two years of experience
                             in
@@ -142,46 +121,181 @@
                             needs
                             of each project.
                         </p>
+                        <div class="link-cv">
+                            <a href="images/Lahcen-Assmira_Cv.pdf" download="Lahcen-Assmira_Cv.pdf"
+                                class="download-link"><i class="fa fas fa-download"></i>_Download CV</a>
+                        </div>
+
                     </article>
-
                 </div>
-                <div class="top">
-                    <a href="images/Lahcen-Assmira_Cv.pdf" download="Lahcen-Assmira_Cv.pdf" class="download-link"><i
-                            class="fa fas fa-download"></i>_Download CV</a>
+                <div class="quote ">
+                    <h1>Coding with passion,creating with purpose</h1>
 
-                    <audio src="images/Voice-text.mp3" controls></audio>
                 </div>
             </div>
 
 
         </div>
-        <!-- <div class="about hiddenSection " id="skill1">
-            <h1 class="hero__title">&gt;_Skills</h1>
+        <div class="skills " id="skills">
+            <h1 class="hero__title line ">&gt;_Skills</h1>
             <div class="container">
-                <div class="image">
-                    <img src="images/java-script.png" alt="image portfolio">
+                <div class="skill">
+                    <div class="card-skill ">
+                        <div class="border frontend" data-aos="fade-right">
+                            <h2>&gt;_FrontEnd</h2>
+                            <div class="grid-container">
+                                <div class="grid-item">
+
+                                    <img src="images/HTML.png" alt="skills Html-5">
+                                    <p>_HTML_5</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/CSS.png" alt="skills css3">
+                                    <p>_CSS_3</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/JS.png" alt="skills JS">
+                                    <p>_JS_ES-6-7</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/react.png" alt="skills JS">
+                                    <p>_React_JS</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/tailwind.png" alt="skills tailwind">
+                                    <p>_Tailwind_</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="border backend" data-aos="fade-up" data-aos-anchor-placement="center-center">
+                            <h2>&gt;_BackEnd</h2>
+                            <div class="grid-container">
+                                <div class="grid-item">
+
+                                    <img src="images/skill-icons--expressjs-light.svg" alt="skillsjs">
+                                    <p>_Express_js</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/skill-icons--nodejs-light.svg" alt="skills nodejs">
+                                    <p>_Node_JS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border database" data-aos="fade-left">
+                            <h2>&gt;_DataBase</h2>
+                            <div class="grid-container">
+                                <div class="grid-item">
+
+                                    <img src="images/mongoDB.png" alt="skillsjs">
+                                    <p>_MongoDB</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/mysql-7602ed5a.png" alt="skills nodejs">
+                                    <p>_Mysql_</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border design" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                            <h2>&gt;_Design</h2>
+                            <div class="grid-container">
+                                <div class="grid-item">
+
+                                    <img src="images/photoshop-4e8a5535.svg" alt="skillsjs">
+                                    <p>Photoshop</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/illustrator-7f25e2d4.svg" alt="skills nodejs">
+                                    <p>Illustrator</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/figma-184a11e6.png" alt="skills nodejs">
+                                    <p>Figma</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="border outils" data-aos="fade-left">
+                            <h2>&gt;_Outils</h2>
+                            <div class="grid-container">
+                                <div class="grid-item">
+                                    <img src="images/git.png" alt="skillsjs">
+                                    <p>_Git_</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/office-9cc4985f.png" alt="skills nodejs">
+                                    <p>_office_</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/trello-fb96451d.png" alt="skills nodejs">
+                                    <p>_Trello_</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <aside>
-                    <article>
-                        I am Lahcen Assmira, a freelance Front-End developer with more than two years of experience in
-                        the field. With my expertise in development, collaboration and responsibility, I am dynamic,
-                        reliable and rigorous. Passionate about my profession, I am constantly on the lookout for the
-                        latest trends and technologies to offer the best service to my customers. I am enthusiastic and
-                        curious, with a developed team spirit and a great listening ability to meet the specific needs
-                        of each project.
-                    </article>
-                </aside>
+
             </div>
 
-        </div> -->
 
-        <div class="srcollTop" id="scroll-up"><img src="images/ri--arrow-up-s-line.svg" alt="arrow line"></div>
+        </div>
+        <div class="project " id="project">
+            <h1 class="hero__title line  ">&gt;_Projects</h1>
+            <div class="container ">
 
-        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script defer src="js/scroll.js"></script>
-        <script src="js/main.js"></script>
+
+                <div class="filter-buttons">
+                    <div class="search">
+                        <i class="fas fa fa-search"></i>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search projects">
+                    </div>
+                   <div class="cate">
+                    <button class="filter-btn" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                   </div>
+                </div>
+
+                <div class="projects-container">
+                    <div class="project-box" data-category="web">
+                        <div class="project-title">Web Project 1</div>
+                        <div class="project-description">Description of Web Project 1 goes here.</div>
+                    </div>
+                    <div class="project-box" data-category="mobile">
+                        <div class="project-title">Mobile Project 1</div>
+                        <div class="project-description">Description of Mobile Project 1 goes here.</div>
+                    </div>
+                    <div class="project-box" data-category="web">
+                        <div class="project-title">Web Project 2</div>
+                        <div class="project-description">Description of Web Project 2 goes here.</div>
+                    </div>
+                    <!-- Add more project boxes as needed -->
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="srcollTop" id="scroll-up"><img src="images/ri--arrow-up-s-line.svg" alt="arrow line"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script defer src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+
+        AOS.init();
+    </script>
+
+
 </body>
 
 </html>
