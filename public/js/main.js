@@ -188,18 +188,18 @@ const options = {
   buttonColorDark: 'white',
   buttonColorLight: '#061423',
   saveInCookies: false,
-  label: '🌓',
-  autoMatchOsTheme: true
+  label: '🌓'
+  
 }
 // function filter text with color
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectBoxes = document.querySelectorAll('.project-box');
 const searchInput = document.getElementById('searchInput');
+const icon = document.querySelector('.icon');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         const filterValue = button.getAttribute('data-filter');
-
         projectBoxes.forEach(box => {
             const category = box.getAttribute('data-category');
 
@@ -207,36 +207,72 @@ filterButtons.forEach(button => {
                 box.style.display = 'block';
             } else {
                 box.style.display = 'none';
+                hideMessage();
             }
         });
     });
 });
+const text = () => {
+  const searchValue = searchInput.value.toLowerCase();
 
-searchInput.addEventListener('input', () => {
-    const searchValue = searchInput.value.toLowerCase();
+  let foundProject = false; // Flag to track if any project is found
 
-    projectBoxes.forEach(box => {
-        const title = box.querySelector('.project-title');
-        const description = box.querySelector('.project-description');
+  projectBoxes.forEach(box => {
+      const title = box.querySelector('.project-title');
+      const description = box.querySelector('.project-description');
 
-        const titleText = title.textContent.toLowerCase();
-        const descriptionText = description.textContent.toLowerCase();
+      const titleText = title.textContent.toLowerCase();
+      const descriptionText = description.textContent.toLowerCase();
 
-        if (titleText.includes(searchValue) || descriptionText.includes(searchValue)) {
-            title.innerHTML = highlightMatch(titleText, searchValue);
-            description.innerHTML = highlightMatch(descriptionText, searchValue);
-            box.style.display = 'block';
-        } else {
-            title.innerHTML = titleText;
-            description.innerHTML = descriptionText;
-            box.style.display = 'none';
-        }
-    });
-});
+      if (titleText.includes(searchValue) || descriptionText.includes(searchValue)) {
+          title.innerHTML = highlightMatch(titleText, searchValue);
+          description.innerHTML = highlightMatch(descriptionText, searchValue);
+          box.style.display = 'block';
+          foundProject = true; // Set flag to true if a project is found
+      } else {
+          title.innerHTML = titleText;
+          description.innerHTML = descriptionText;
+          box.style.display = 'none'; 
+          
+      }
+  });
+
+  // Show message if no project is found
+  if (!foundProject) {
+      showMessage("We're sorry, Please double-check the project name or try searching by category.");
+  } else {
+      hideMessage();
+  }
+};
+
+// Function to show the message
+const showMessage = (message) => {
+  const messageDiv = document.getElementById('message');
+  messageDiv.textContent = message;
+  messageDiv.style.display = 'block';
+};
+
+// Function to hide the message
+const hideMessage = () => {
+  const messageDiv = document.getElementById('message');
+  messageDiv.textContent = '';
+  messageDiv.style.display = 'none';
+};
+
+searchInput.addEventListener('input', text);
+icon.addEventListener("click", text);
+
+
 
 function highlightMatch(text, searchValue) {
     return text.replace(new RegExp(searchValue, 'gi'), match => `<span class="highlight">${match}</span>`);
 }
+searchInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+      text();
+  }
+});
+
 AOS.init();
 
 

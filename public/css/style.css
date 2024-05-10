@@ -166,8 +166,9 @@ html {
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 5px;
-    padding-right: 15px;
+    /* padding-left: 5px;
+    padding-right: 15px; */
+    
    
 
 }
@@ -203,6 +204,11 @@ ul li {
 @media (min-width:1200px) {
     .container {
         width: 1170px;
+    }
+}
+@media (max-width:768px){
+    .container{
+        overflow: hidden;
     }
 }
 
@@ -968,6 +974,11 @@ padding: 10px;
    position: relative;
     height: 100vh;
 }
+.project .container{
+    padding-top: 20px;
+}
+
+
 @media (min-width:768px){
 .project .hero__title{
 margin-top: 20px;
@@ -979,8 +990,15 @@ margin-top: 20px;
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the number of columns as needed */
     gap: 20px; /* Adjust the gap between grid items */
+    border-top : 1px solid var(--three-color);
+   
+}
+@media (min-width: 768px){
+    .projects-container{
+         padding-top: 50px;
+    }
 }
 .project-box {
     border: 1px solid #ccc; /* Border style and color */
@@ -1003,6 +1021,7 @@ margin-top: 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    
 }
 .filter-btn {
     margin: 5px;
@@ -1028,6 +1047,136 @@ margin-top: 20px;
 }
 /* Style for the highlighted text */
 .highlight {
-    background-color: yellow;
+    background-color: var(--four-color);
     font-weight: bold;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .input {
+    border-style: none;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    outline: none;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    background: var(--secondary-color);
+    box-shadow: 0px 0px 3px  var(--main-color);
+    padding-right: 40px;
+    color: #fff;
+  }
+  
+  .input::placeholder,
+  .input {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 17px;
+  }
+  
+  .input::placeholder {
+    color: #8f8f8f;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-style: none;
+    border-radius: 50%;
+    pointer-events: painted;
+    background-color: transparent;
+    transition: 0.2s linear;
+  }
+  
+  .icon:focus ~ .input,
+  .input:focus {
+    box-shadow: none;
+    width: 250px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 3px solid #1557c0;
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+  }
+  
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: var(--main-color);
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  
+  .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+  }
+  
+  .cta svg {
+    position: relative;
+    top: 0;
+    /* margin-left: 10px; */
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active {
+    transform: scale(0.95);
+  }
+
+  
+#message{
+  position: absolute;
+   left: 40%;
+   top: 50%;
+   transform: translate(-40%,-50%);
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: red;
+  font-weight: bold;
+
 }

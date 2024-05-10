@@ -243,22 +243,71 @@
 
         </div>
         <div class="project " id="project">
-            <h1 class="hero__title line  ">&gt;_Projects</h1>
+            <h1 class="hero__title   ">&gt;_Projects</h1>
             <div class="container ">
 
-
                 <div class="filter-buttons">
+        
                     <div class="search">
-                        <i class="fas fa fa-search"></i>
-                        <input type="text" id="searchInput" class="search-input" placeholder="Search projects">
+                        
+                        <div class="input-wrapper">
+                            <button class="icon">
+                              <svg
+                                width="25px"
+                                height="25px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                                  stroke="#fff"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                ></path>
+                                <path
+                                  d="M22 22L20 20"
+                                  stroke="#fff"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                ></path>
+                              </svg>
+                            </button>
+                            <input type="text" name="text" id="searchInput" class="input search-input" placeholder="Search Projects" />
+                          </div>
+                          
+                        <!-- <input type="text" id="searchInput" class="search-input" placeholder="Search projects"> -->
                     </div>
                    <div class="cate">
-                    <button class="filter-btn" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="cta filter-btn" data-filter="all">
+                        <span>All</span>
+                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                      </button>
+                    <!-- <button class="filter-btn" data-filter="all">All</button> -->
+                    <button class="cta filter-btn" data-filter="web">
+                        <span>Web</span>
+                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                      </button>
+                    <!-- <button class="filter-btn" data-filter="web">Web</button> -->
+                    <button class="cta filter-btn" data-filter="mobile">
+                        <span>Mobile</span>
+                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                      </button>
+                    <!-- <button class="filter-btn" data-filter="mobile">Mobile</button> -->
                    </div>
                 </div>
-
+                
                 <div class="projects-container">
                     <div class="project-box" data-category="web">
                         <div class="project-title">Web Project 1</div>
@@ -272,6 +321,7 @@
                         <div class="project-title">Web Project 2</div>
                         <div class="project-description">Description of Web Project 2 goes here.</div>
                     </div>
+                    <div id="message"></div>
                     <!-- Add more project boxes as needed -->
                 </div>
 
