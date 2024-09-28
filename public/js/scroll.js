@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       event.preventDefault(); 
 
       
-      var targetId = this.getAttribute('href').substring(1); // Remove the leading '#'
+      var targetId = this.getAttribute('href').substring(1);
       var targetElement = document.getElementById(targetId);
 
       
