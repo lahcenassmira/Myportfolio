@@ -289,212 +289,68 @@
                     </div>
                 </div>
 
-                                <div class="projects-container">
-                    <!-- Clipdrift.com Project -->
+                <div class="projects-container">
                     <div class="project-box" data-category="web">
-                        <div class="project-header">
-                            <div class="project-title">Clipdrift – Newsletter & Content Distribution Platform</div>
-                            <div class="project-tags">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Express.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">REST API</span>
-                                <span class="tech-tag">Email Service</span>
-                            </div>
-                        </div>
-                        <div class="project-description">
-                            <strong>Overview:</strong> Full-featured newsletter platform enabling content creators to build, manage, and distribute email campaigns to subscribers. Handles user authentication, subscriber management, campaign scheduling, and analytics tracking.
-                        </div>
-                        <div class="project-details">
-                            <div class="detail-section">
-                                <h4>🎯 Key Features</h4>
-                                <ul>
-                                    <li>User registration & JWT-based authentication system</li>
-                                    <li>Subscriber database with import/export functionality</li>
-                                    <li>Rich text email editor with template management</li>
-                                    <li>Automated email scheduling & batch sending</li>
-                                    <li>Real-time analytics dashboard (open rates, click-through rates)</li>
-                                    <li>RESTful API for third-party integrations</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🏗️ Technical Architecture</h4>
-                                <ul>
-                                    <li><strong>Backend:</strong> Node.js + Express.js RESTful API</li>
-                                    <li><strong>Database:</strong> MongoDB with Mongoose ODM for flexible schema design</li>
-                                    <li><strong>Authentication:</strong> JWT tokens + bcrypt password hashing</li>
-                                    <li><strong>Email Service:</strong> Nodemailer integration with SMTP</li>
-                                    <li><strong>Frontend:</strong> Responsive SPA with vanilla JavaScript/React</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🚀 Technical Challenges & Solutions</h4>
-                                <ul>
-                                    <li><strong>Challenge:</strong> Sending bulk emails without triggering spam filters
-                                        <br><strong>Solution:</strong> Implemented batch processing with rate limiting and SPF/DKIM authentication
-                                    </li>
-                                    <li><strong>Challenge:</strong> Managing large subscriber lists efficiently
-                                        <br><strong>Solution:</strong> Database indexing + pagination + MongoDB aggregation pipelines
-                                    </li>
-                                    <li><strong>Challenge:</strong> Real-time analytics updates
-                                        <br><strong>Solution:</strong> Event-driven architecture with webhook tracking
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-section business-impact">
-                                <h4>💼 Business Impact</h4>
-                                <p>Production-ready platform capable of managing 10,000+ subscribers and sending 50,000+ emails/month. Reduced manual newsletter management time by 80% through automation.</p>
-                            </div>
+
+
+                        <div class="project-title">SoundScape: Your Gateway to Premium Audio</div>
+                        <div class="project-description">I worked on developing a sleek, user-focused e-commerce
+                            platform for premium headphones. The project aimed to enhance the customer’s journey by
+                            creating an engaging, immersive interface that reflects the brand’s commitment to
+                            high-quality audio experiences. The website seamlessly integrates product showcases, smooth
+                            navigation, and an optimized checkout process to ensure a seamless shopping experience.
                         </div>
                         <div class="mockup-container">
-                            <a href="https://clipdrift.com" target="_blank" class="icon-preview" title="View Live Project">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+                            <a href="https://soundwavee.netlify.app" target="_blank" class="icon-preview">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64"
+                                    fill="none">
                                     <path d="M16 12v40l32-20L16 12z" fill="#1DB954" />
                                 </svg>
                             </a>
-                            <div class="project-link-overlay">
-                                <p>🌐 Live at: <a href="https://clipdrift.com" target="_blank">clipdrift.com</a></p>
-                            </div>
+                            <img src="images/2faliv.png" alt="">
                         </div>
-                    </div>
 
-                    <!-- Urldn.com Project -->
-                    <div class="project-box" data-category="web">
-                        <div class="project-header">
-                            <div class="project-title">Urldn – URL Shortening & Link Management System</div>
-                            <div class="project-tags">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Express.js</span>
-                                <span class="tech-tag">SQL (MySQL)</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">REST API</span>
-                            </div>
-                        </div>
+
+                    </div>
+                    <div class="project-box" data-category="mobile">
+                        <div class="project-title">Future Mobile Project: AI-Powered Mobile App</div>
                         <div class="project-description">
-                            <strong>Overview:</strong> High-performance URL shortening service with advanced link management, analytics tracking, and custom domain support. Built to handle thousands of redirects per second with sub-100ms response times.
+                            This mobile app project will focus on creating an AI-powered mood tracker that provides
+                            real-time recommendations for movies and books based on user input. The app will utilize
+                            machine learning algorithms to analyze user mood trends and offer personalized suggestions,
+                            pulling data from APIs such as TMDB for movies and Google Books API for books.
                         </div>
-                        <div class="project-details">
-                            <div class="detail-section">
-                                <h4>🎯 Key Features</h4>
-                                <ul>
-                                    <li>Instant URL shortening with custom alias support</li>
-                                    <li>QR code generation for shortened links</li>
-                                    <li>Detailed click analytics (geographic, device, referrer data)</li>
-                                    <li>Link expiration & password protection options</li>
-                                    <li>User dashboard for managing all links</li>
-                                    <li>API endpoints for programmatic link creation</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🏗️ Technical Architecture</h4>
-                                <ul>
-                                    <li><strong>Backend:</strong> Node.js + Express.js with async/await patterns</li>
-                                    <li><strong>Database:</strong> MySQL for relational data (users, links, analytics)</li>
-                                    <li><strong>Caching:</strong> Redis for high-performance redirect lookups</li>
-                                    <li><strong>Algorithm:</strong> Base62 encoding for generating short codes</li>
-                                    <li><strong>Security:</strong> Rate limiting, input validation, SQL injection prevention</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🚀 Technical Challenges & Solutions</h4>
-                                <ul>
-                                    <li><strong>Challenge:</strong> Achieving sub-100ms redirect performance
-                                        <br><strong>Solution:</strong> Redis caching layer with automatic cache warming + database connection pooling
-                                    </li>
-                                    <li><strong>Challenge:</strong> Preventing hash collisions in URL shortening
-                                        <br><strong>Solution:</strong> Implemented collision detection with retry mechanism using random seed generation
-                                    </li>
-                                    <li><strong>Challenge:</strong> Tracking analytics without slowing redirects
-                                        <br><strong>Solution:</strong> Asynchronous event logging with background workers
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-section business-impact">
-                                <h4>💼 Business Impact</h4>
-                                <p>Processed 100,000+ URL shortenings with 99.9% uptime. Average redirect time under 50ms. Used by marketers and businesses for campaign tracking.</p>
-                            </div>
-                        </div>
+                        <!-- Mockup Image -->
                         <div class="mockup-container">
-                            <a href="https://urldn.com" target="_blank" class="icon-preview" title="View Live Project">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+                            <a href="#" target="_blank" class="icon-preview">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64"
+                                    fill="none">
                                     <path d="M16 12v40l32-20L16 12z" fill="#1DB954" />
                                 </svg>
                             </a>
-                            <div class="project-link-overlay">
-                                <p>🌐 Live at: <a href="https://urldn.com" target="_blank">urldn.com</a></p>
-                            </div>
+                            <img src="images/DALL·E 2024-09-26 12.29.29 - A clean and modern website mockup for a mobile AI-powered mood tracking app. The interface shows a user-friendly layout with a large mood input field,.webp"
+                                alt="AI-Powered Mood Tracker Mockup">
                         </div>
                     </div>
-
-                    <!-- Fluxdownload.com Project -->
                     <div class="project-box" data-category="web">
-                        <div class="project-header">
-                            <div class="project-title">Fluxdownload – File Download & Stream Management Platform</div>
-                            <div class="project-tags">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Express.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">AWS S3</span>
-                                <span class="tech-tag">Stream Processing</span>
-                            </div>
-                        </div>
-                        <div class="project-description">
-                            <strong>Overview:</strong> Enterprise-grade file management platform for organizing, sharing, and streaming large files. Features secure upload/download, bandwidth management, and multi-user access control.
-                        </div>
-                        <div class="project-details">
-                            <div class="detail-section">
-                                <h4>🎯 Key Features</h4>
-                                <ul>
-                                    <li>Chunked file upload with resume capability</li>
-                                    <li>Secure file sharing with expiring download links</li>
-                                    <li>Bandwidth throttling & download speed control</li>
-                                    <li>User roles & permissions (admin, uploader, viewer)</li>
-                                    <li>Download history & usage analytics</li>
-                                    <li>Direct streaming for media files</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🏗️ Technical Architecture</h4>
-                                <ul>
-                                    <li><strong>Backend:</strong> Node.js + Express.js with streaming APIs</li>
-                                    <li><strong>Database:</strong> MongoDB for metadata & user management</li>
-                                    <li><strong>Storage:</strong> AWS S3 integration for scalable file storage</li>
-                                    <li><strong>File Processing:</strong> Node.js streams for efficient memory usage</li>
-                                    <li><strong>Security:</strong> Signed URLs, JWT auth, file encryption at rest</li>
-                                </ul>
-                            </div>
-                            <div class="detail-section">
-                                <h4>🚀 Technical Challenges & Solutions</h4>
-                                <ul>
-                                    <li><strong>Challenge:</strong> Handling large file uploads without memory overflow
-                                        <br><strong>Solution:</strong> Implemented multipart upload with chunking + Node.js streams to process data incrementally
-                                    </li>
-                                    <li><strong>Challenge:</strong> Resume interrupted downloads
-                                        <br><strong>Solution:</strong> HTTP Range requests support + checksum validation
-                                    </li>
-                                    <li><strong>Challenge:</strong> Cost-effective file storage at scale
-                                        <br><strong>Solution:</strong> AWS S3 lifecycle policies + automatic compression for compatible formats
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-section business-impact">
-                                <h4>💼 Business Impact</h4>
-                                <p>Managing 1TB+ of files across 5,000+ downloads. Reduced infrastructure costs by 40% through optimized storage. Enabled secure file distribution for remote teams.</p>
-                            </div>
-                        </div>
+                        <div class="project-title">Blossom Hote</div>
+                        <div class="project-description">This is a fully responsive hotel website for Blossom Hote,
+                            designed to provide potential guests with easy access to information about the hotel, its
+                            amenities, and booking options. The site targets travelers looking for a comfortable and
+                            enjoyable stay</div>
                         <div class="mockup-container">
-                            <a href="https://fluxdownload.com" target="_blank" class="icon-preview" title="View Live Project">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+                            <a href="https://hotel.netlify.app" target="_blank" class="icon-preview">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64"
+                                    fill="none">
                                     <path d="M16 12v40l32-20L16 12z" fill="#1DB954" />
                                 </svg>
                             </a>
-                            <div class="project-link-overlay">
-                                <p>🌐 Live at: <a href="https://fluxdownload.com" target="_blank">fluxdownload.com</a></p>
-                            </div>
+                            <img src="images/Screenshot 2024-09-26 at 13-55-18 BLOSSOM.png"
+                                alt="AI-Powered Mood Tracker Mockup">
                         </div>
                     </div>
-
                     <div id="message"></div>
+                    <!-- Add more project boxes as needed -->
                     <div class="more-por">
                         <a href="https://github.com/lahcenassmira" class="more-projects-button" target="_blank">More
                             Projects</a>

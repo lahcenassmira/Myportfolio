@@ -1352,3 +1352,150 @@ justify-content: center;
         font-size: 14px; /* Smaller font size for mobile */
     }
 }
+
+/* Enhanced Project Styles for Full Stack Portfolio */
+.project-header {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, var(--secondary-color), var(--three-color));
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.project-details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.detail-section {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--three-color);
+}
+
+.detail-section h4 {
+    color: var(--three-color);
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.detail-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-section ul li {
+    padding: 6px 0;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.detail-section ul li::before {
+    content: "▸ ";
+    color: var(--three-color);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.detail-section ul li strong {
+    color: #fff;
+}
+
+.business-impact {
+    background: linear-gradient(135deg, rgba(27, 26, 85, 0.3), rgba(161, 159, 213, 0.1));
+    border-left-color: rgba(7, 231, 7, 0.767);
+}
+
+.business-impact p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-link-overlay {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(27, 26, 85, 0.5);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.project-link-overlay p {
+    margin: 0;
+    font-size: 13px;
+    color: #999;
+}
+
+.project-link-overlay a {
+    color: var(--three-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.project-link-overlay a:hover {
+    color: rgba(7, 231, 7, 0.767);
+}
+
+/* Responsive adjustments for project boxes */
+@media (max-width: 768px) {
+    .project-box {
+        padding: 15px;
+    }
+    
+    .tech-tag {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+    
+    .detail-section {
+        padding: 12px;
+    }
+    
+    .detail-section h4 {
+        font-size: 14px;
+    }
+    
+    .detail-section ul li {
+        font-size: 12px;
+    }
+}
+
+/* Improve project box layout for larger screens */
+@media (min-width: 992px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        /* Single column for better readability */
+    }
+    
+    .project-box {
+        max-width: 100%;
+        padding: 30px;
+    }
+}
